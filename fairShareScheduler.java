@@ -20,7 +20,8 @@ class Process {
 
 public class fairShareScheduler {
 
-    static final int TOTAL_PROCESSES = 100;
+    //change this for the number of processes
+    static final int TOTAL_PROCESSES = 100; 
 
     public static void main(String[] args) {
 
@@ -41,18 +42,20 @@ public class fairShareScheduler {
         List<Process> processes = new ArrayList<>();
 
         int arrival = 0;
+        //change the 2 lines below for their respective cycles
         int runtimeCycle[] = {5,10,15,20,25,30,35,40,45,50};
         int deadlineCycle[] = {10,20,30,40,50,60,70,80,90,100};
 
         for (int i = 0; i < TOTAL_PROCESSES; i++) {
 
+            //change the number in the 2 lines below for the indexing
             int runtime = runtimeCycle[i % 10];
             int deadline = deadlineCycle[i % 10];
 
             processes.add(new Process(i, arrival, runtime, deadline));
 
             if ((i + 1) % 5 == 0) {
-                arrival += 5;
+                arrival += 5; //change this lines number for the arrival timing
             }
         }
 
